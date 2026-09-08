@@ -1,0 +1,12 @@
+.kdp-work/
+release/
+dist/
+/book-builder
+/book-builder.exe
+*.test
+coverage.out
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+Desktop.ini

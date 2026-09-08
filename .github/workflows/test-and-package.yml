@@ -1,0 +1,42 @@
+name: test-and-package
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - run: go test ./...
+      - run: go vet ./...
+
+  package:
+    if: github.event_name == 'workflow_dispatch'
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - run: sh ./scripts/build-all.sh
+      - name: Assemble no-runtime distribution
+        run: |
+          chmod +x bin/book-builder-macos-* bin/book-builder-linux-*
+          mkdir -p dist/yoroshiku-epub-agent
+          cp -R AGENTS.md README.md LICENSE book-info.md manuscript images assets bin docs templates dist/yoroshiku-epub-agent/
+          cd dist
+          zip -r yoroshiku-epub-agent.zip yoroshiku-epub-agent
+      - uses: actions/upload-artifact@v4
+        with:
+          name: yoroshiku-epub-agent
+          path: dist/yoroshiku-epub-agent.zip

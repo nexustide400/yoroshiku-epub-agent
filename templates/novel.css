@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+html {
+  -webkit-writing-mode: horizontal-tb;
+  writing-mode: horizontal-tb;
+}
+
+body {
+  font-family: serif;
+  line-height: 1.8;
+  margin: 0 5%;
+  padding: 0;
+  text-align: justify;
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sans-serif;
+  font-weight: normal;
+  line-height: 1.4;
+  margin: 2em 0 1.2em;
+  text-align: start;
+}
+
+h1 {
+  break-before: page;
+  font-size: 1.5em;
+  page-break-before: always;
+}
+
+h2 {
+  font-size: 1.25em;
+}
+
+p {
+  margin: 0;
+  text-indent: 1em;
+}
+
+p + p {
+  margin-top: 0.35em;
+}
+
+blockquote {
+  margin: 1em 1.5em;
+}
+
+blockquote p,
+figcaption,
+li p {
+  text-indent: 0;
+}
+
+hr {
+  border: 0;
+  break-after: page;
+  height: 0;
+  margin: 2em 0;
+  page-break-after: always;
+}
+
+figure {
+  break-inside: avoid;
+  margin: 1.5em 0;
+  page-break-inside: avoid;
+  text-align: center;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+.inline-image {
+  max-height: 1.2em;
+  vertical-align: middle;
+}
+
+figcaption {
+  font-size: 0.85em;
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+ruby rt {
+  font-size: 0.55em;
+}
+
+nav ol {
+  padding-inline-start: 1.5em;
+}
+
+.missing-image {
+  border: 1px solid currentColor;
+  padding: 1em;
+  text-indent: 0;
+}

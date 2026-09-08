@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "inputDir": ".",
+  "outputDir": "release",
+  "book": {
+    "title": "風の知らせ",
+    "creator": "山田 花子",
+    "language": "ja",
+    "description": "古書店で働く主人公が、不思議な手紙をきっかけに町の秘密へ近づく短編小説。",
+    "rights": "Copyright © 2026 山田 花子",
+    "modified": "2026-09-02T00:00:00Z",
+    "writingMode": "horizontal-tb"
+  },
+  "cover": {
+    "path": "cover.jpg",
+    "alt": "風の知らせ 表紙"
+  },
+  "sections": [
+    {
+      "path": "manuscript.md",
+      "title": "第一章　風の知らせ",
+      "level": 1
+    }
+  ],
+  "kdp": {
+    "description": "古書店で働く主人公が、一通の手紙をきっかけに町の秘密へ踏み込んでいく短編小説。",
+    "keywords": ["日本文学 短編", "古書店 ミステリー"],
+    "categories": ["文学・評論 > 小説"],
+    "primaryMarket": "Amazon.co.jp",
+    "rightsConfirmed": true,
+    "publicDomain": false,
+    "aiGeneratedText": "none",
+    "aiGeneratedCover": "none",
+    "aiGeneratedArt": "none",
+    "aiTranslation": "none"
+  }
+}
